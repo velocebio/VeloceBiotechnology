@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Veloce Biotechnology</title>
+
+<style>
+
+body{
+margin:0;
+font-family: "Georgia", serif;
+background: linear-gradient(135deg,#f6e8ff,#ffeef5,#e8f2ff);
+color:#333;
+}
+
+/* NAVBAR */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 80px;
+background:white;
+box-shadow:0 3px 15px rgba(0,0,0,0.05);
+}
+
+header h1{
+color:#6b3fa0;
+}
+
+nav a{
+margin-left:30px;
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+/* HERO */
+
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h2{
+font-size:60px;
+color:#6b3fa0;
+}
+
+.hero p{
+font-size:22px;
+width:60%;
+}
+
+.hero button{
+margin-top:25px;
+padding:15px 35px;
+border:none;
+border-radius:30px;
+background:#7f5af0;
+color:white;
+font-size:18px;
+cursor:pointer;
+}
+
+/* SECTIONS */
+
+.section{
+padding:80px 120px;
+text-align:center;
+}
+
+.section h2{
+font-size:40px;
+color:#6b3fa0;
+margin-bottom:50px;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:35px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* DRUG SEARCH */
+
+.search-box{
+margin-bottom:30px;
+}
+
+.search-box input{
+padding:12px;
+width:300px;
+border-radius:20px;
+border:1px solid #ccc;
+}
+
+/* FOOTER */
+
+footer{
+background:#f0e6ff;
+text-align:center;
+padding:40px;
+margin-top:80px;
+}
+
+</style>
+
+<script>
+
+function searchDrug(){
+
+let input=document.getElementById("search").value.toLowerCase()
+
+let drugs=document.querySelectorAll("#drugList li")
+
+drugs.forEach(function(drug){
+
+let text=drug.innerText.toLowerCase()
+
+if(text.includes(input)){
+drug.style.display=""
+}
+else{
+drug.style.display="none"
+}
+
+})
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🧬 Veloce Biotechnology</h1>
+
+<nav>
+<a href="#">Home</a>
+<a href="#biotech">Biotechnology</a>
+<a href="#pharma">Pharmaceuticals</a>
+<a href="#ai">AI Platform</a>
+<a href="#drugs">Drug Database</a>
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h2>Where Science Meets Elegance</h2>
+
+<p>
+Advancing biotechnology, pharmaceuticals, and AI-driven medicine
+to create the next generation of therapeutics.
+</p>
+
+<button>Explore Our Science</button>
+
+</section>
+
+<!-- BIOTECH -->
+
+<section class="section" id="biotech">
+
+<h2>Biotechnology</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Gene Editing</h3>
+<p>CRISPR genome engineering and gene therapy research.</p>
+</div>
+
+<div class="card">
+<h3>Genomics</h3>
+<p>Large-scale DNA analysis to understand disease biology.</p>
+</div>
+
+<div class="card">
+<h3>Precision Medicine</h3>
+<p>Personalized treatments based on genetic profiles.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- PHARMACEUTICALS -->
+
+<section class="section" id="pharma">
+
+<h2>Pharmaceuticals</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Drug Development</h3>
+<p>Discovery and development of innovative medicines.</p>
+</div>
+
+<div class="card">
+<h3>OSD</h3>
+<p>Tablets, capsules, modified release formulations.</p>
+</div>
+
+<div class="card">
+<h3>Injectables</h3>
+<p>IV medicines, vaccines, sterile injectables.</p>
+</div>
+
+<div class="card">
+<h3>Biologics</h3>
+<p>Monoclonal antibodies and recombinant proteins.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- AI PLATFORM -->
+
+<section class="section" id="ai">
+
+<h2>Veloce AI BioEngine</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>AI Drug Discovery</h3>
+<p>Machine learning models predicting drug molecules.</p>
+</div>
+
+<div class="card">
+<h3>Protein Modeling</h3>
+<p>AI predicting protein structures and interactions.</p>
+</div>
+
+<div class="card">
+<h3>Genomic Analysis</h3>
+<p>Advanced analysis of large biological datasets.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- DRUG DATABASE -->
+
+<section class="section" id="drugs">
+
+<h2>Drug Database</h2>
+
+<div class="search-box">
+<input type="text" id="search" placeholder="Search drug..." onkeyup="searchDrug()">
+</div>
+
+<ul id="drugList">
+
+<li>Paracetamol</li>
+<li>Ibuprofen</li>
+<li>Aspirin</li>
+<li>Metformin</li>
+<li>Amoxicillin</li>
+<li>Azithromycin</li>
+<li>Ciprofloxacin</li>
+<li>Doxycycline</li>
+<li>Omeprazole</li>
+<li>Atorvastatin</li>
+<li>Losartan</li>
+<li>Amlodipine</li>
+<li>Warfarin</li>
+<li>Prednisone</li>
+<li>Insulin</li>
+
+</ul>
+
+</section>
+
+<footer>
+
+<p>© 2026 Veloce Biotechnology</p>
+<p>Advancing biotechnology, pharmaceuticals, and AI-driven medicine.</p>
+
+</footer>
+
+</body>
+
+</html>
