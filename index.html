@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,44 +11,50 @@
 
 body{
 margin:0;
-font-family: "Georgia", serif;
-background: linear-gradient(135deg,#f6e8ff,#ffeef5,#e8f2ff);
-color:#333;
+font-family:Georgia,serif;
+}
+
+/* HERO BACKGROUND */
+
+.hero{
+height:100vh;
+
+background-image:
+linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.85)),
+url("https://images.unsplash.com/photo-1525310072745-f49212b5ac6d");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
 }
 
 /* NAVBAR */
 
 header{
+position:absolute;
+top:0;
+width:100%;
 display:flex;
 justify-content:space-between;
-align-items:center;
-padding:20px 80px;
-background:white;
-box-shadow:0 3px 15px rgba(0,0,0,0.05);
+padding:25px 70px;
+}
+
+nav a{
+margin-left:25px;
+text-decoration:none;
+color:#333;
 }
 
 header h1{
 color:#6b3fa0;
 }
 
-nav a{
-margin-left:30px;
-text-decoration:none;
-color:#333;
-font-weight:500;
-}
-
-/* HERO */
-
-.hero{
-height:90vh;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:20px;
-}
+/* HERO TEXT */
 
 .hero h2{
 font-size:60px;
@@ -61,17 +66,6 @@ font-size:22px;
 width:60%;
 }
 
-.hero button{
-margin-top:25px;
-padding:15px 35px;
-border:none;
-border-radius:30px;
-background:#7f5af0;
-color:white;
-font-size:18px;
-cursor:pointer;
-}
-
 /* SECTIONS */
 
 .section{
@@ -79,18 +73,10 @@ padding:80px 120px;
 text-align:center;
 }
 
-.section h2{
-font-size:40px;
-color:#6b3fa0;
-margin-bottom:50px;
-}
-
-/* GRID */
-
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:35px;
+gap:30px;
 }
 
 .card{
@@ -102,24 +88,18 @@ box-shadow:0 10px 25px rgba(0,0,0,0.08);
 
 /* DRUG SEARCH */
 
-.search-box{
-margin-bottom:30px;
-}
-
-.search-box input{
+input{
 padding:12px;
 width:300px;
 border-radius:20px;
 border:1px solid #ccc;
+margin-bottom:20px;
 }
-
-/* FOOTER */
 
 footer{
 background:#f0e6ff;
 text-align:center;
 padding:40px;
-margin-top:80px;
 }
 
 </style>
@@ -138,8 +118,7 @@ let text=drug.innerText.toLowerCase()
 
 if(text.includes(input)){
 drug.style.display=""
-}
-else{
+}else{
 drug.style.display="none"
 }
 
@@ -158,11 +137,12 @@ drug.style.display="none"
 <h1>🧬 Veloce Biotechnology</h1>
 
 <nav>
+
 <a href="#">Home</a>
-<a href="#biotech">Biotechnology</a>
+<a href="#genetics">Genetic Tech</a>
 <a href="#pharma">Pharmaceuticals</a>
-<a href="#ai">AI Platform</a>
 <a href="#drugs">Drug Database</a>
+
 </nav>
 
 </header>
@@ -171,65 +151,83 @@ drug.style.display="none"
 
 <section class="hero">
 
-<h2>Where Science Meets Elegance</h2>
+<h2>Veloce Biotechnology</h2>
 
 <p>
-Advancing biotechnology, pharmaceuticals, and AI-driven medicine
-to create the next generation of therapeutics.
+Elegant science combining biotechnology, pharmaceuticals,
+and artificial intelligence to accelerate medicine discovery.
 </p>
-
-<button>Explore Our Science</button>
 
 </section>
 
-<!-- BIOTECH -->
+<!-- GENETIC TECHNOLOGY -->
 
-<section class="section" id="biotech">
+<section class="section" id="genetics">
 
-<h2>Biotechnology</h2>
+<h2>Genetic Technologies</h2>
 
 <div class="grid">
 
 <div class="card">
-<h3>Gene Editing</h3>
-<p>CRISPR genome engineering and gene therapy research.</p>
+<h3>CRISPR Gene Editing</h3>
+<p>Precise genome editing technology.</p>
 </div>
 
 <div class="card">
-<h3>Genomics</h3>
-<p>Large-scale DNA analysis to understand disease biology.</p>
+<h3>Gene Therapy</h3>
+<p>Treating diseases by modifying genetic material.</p>
 </div>
 
 <div class="card">
-<h3>Precision Medicine</h3>
-<p>Personalized treatments based on genetic profiles.</p>
+<h3>mRNA Technology</h3>
+<p>Messenger RNA based therapeutics and vaccines.</p>
+</div>
+
+<div class="card">
+<h3>DNA Sequencing</h3>
+<p>Next generation genomic sequencing platforms.</p>
+</div>
+
+<div class="card">
+<h3>Base Editing</h3>
+<p>Direct chemical conversion of DNA bases.</p>
+</div>
+
+<div class="card">
+<h3>Prime Editing</h3>
+<p>Advanced gene correction technology.</p>
+</div>
+
+<div class="card">
+<h3>CAR-T Cell Therapy</h3>
+<p>Genetically engineered immune cells for cancer.</p>
+</div>
+
+<div class="card">
+<h3>Synthetic Biology</h3>
+<p>Engineering biological systems for medicine.</p>
 </div>
 
 </div>
 
 </section>
 
-<!-- PHARMACEUTICALS -->
+<!-- PHARMA -->
 
 <section class="section" id="pharma">
 
-<h2>Pharmaceuticals</h2>
+<h2>Pharmaceutical Capabilities</h2>
 
 <div class="grid">
 
 <div class="card">
-<h3>Drug Development</h3>
-<p>Discovery and development of innovative medicines.</p>
-</div>
-
-<div class="card">
 <h3>OSD</h3>
-<p>Tablets, capsules, modified release formulations.</p>
+<p>Tablets and capsules.</p>
 </div>
 
 <div class="card">
 <h3>Injectables</h3>
-<p>IV medicines, vaccines, sterile injectables.</p>
+<p>Sterile IV medicines and vaccines.</p>
 </div>
 
 <div class="card">
@@ -237,31 +235,9 @@ to create the next generation of therapeutics.
 <p>Monoclonal antibodies and recombinant proteins.</p>
 </div>
 
-</div>
-
-</section>
-
-<!-- AI PLATFORM -->
-
-<section class="section" id="ai">
-
-<h2>Veloce AI BioEngine</h2>
-
-<div class="grid">
-
 <div class="card">
-<h3>AI Drug Discovery</h3>
-<p>Machine learning models predicting drug molecules.</p>
-</div>
-
-<div class="card">
-<h3>Protein Modeling</h3>
-<p>AI predicting protein structures and interactions.</p>
-</div>
-
-<div class="card">
-<h3>Genomic Analysis</h3>
-<p>Advanced analysis of large biological datasets.</p>
+<h3>Drug Discovery</h3>
+<p>AI-driven therapeutic design.</p>
 </div>
 
 </div>
@@ -274,27 +250,106 @@ to create the next generation of therapeutics.
 
 <h2>Drug Database</h2>
 
-<div class="search-box">
 <input type="text" id="search" placeholder="Search drug..." onkeyup="searchDrug()">
-</div>
 
 <ul id="drugList">
 
 <li>Paracetamol</li>
 <li>Ibuprofen</li>
 <li>Aspirin</li>
-<li>Metformin</li>
 <li>Amoxicillin</li>
 <li>Azithromycin</li>
 <li>Ciprofloxacin</li>
 <li>Doxycycline</li>
+<li>Metformin</li>
+<li>Insulin</li>
 <li>Omeprazole</li>
 <li>Atorvastatin</li>
 <li>Losartan</li>
 <li>Amlodipine</li>
 <li>Warfarin</li>
 <li>Prednisone</li>
-<li>Insulin</li>
+<li>Hydrochlorothiazide</li>
+<li>Simvastatin</li>
+<li>Lisinopril</li>
+<li>Clopidogrel</li>
+<li>Levothyroxine</li>
+<li>Gabapentin</li>
+<li>Sertraline</li>
+<li>Fluoxetine</li>
+<li>Escitalopram</li>
+<li>Diazepam</li>
+<li>Lorazepam</li>
+<li>Alprazolam</li>
+<li>Codeine</li>
+<li>Morphine</li>
+<li>Fentanyl</li>
+<li>Oxycodone</li>
+<li>Tramadol</li>
+<li>Ketamine</li>
+<li>Propofol</li>
+<li>Midazolam</li>
+<li>Ranitidine</li>
+<li>Famotidine</li>
+<li>Pantoprazole</li>
+<li>Lansoprazole</li>
+<li>Esomeprazole</li>
+<li>Ceftriaxone</li>
+<li>Cefixime</li>
+<li>Cefuroxime</li>
+<li>Vancomycin</li>
+<li>Meropenem</li>
+<li>Imipenem</li>
+<li>Clarithromycin</li>
+<li>Rifampicin</li>
+<li>Isoniazid</li>
+<li>Ethambutol</li>
+<li>Pyrazinamide</li>
+<li>Tenofovir</li>
+<li>Lamivudine</li>
+<li>Dolutegravir</li>
+<li>Acyclovir</li>
+<li>Valacyclovir</li>
+<li>Oseltamivir</li>
+<li>Remdesivir</li>
+<li>Hydroxychloroquine</li>
+<li>Chloroquine</li>
+<li>Artemether</li>
+<li>Lumefantrine</li>
+<li>Albendazole</li>
+<li>Mebendazole</li>
+<li>Ivermectin</li>
+<li>Metronidazole</li>
+<li>Tinidazole</li>
+<li>Nitrofurantoin</li>
+<li>Trimethoprim</li>
+<li>Sulfamethoxazole</li>
+<li>Levofloxacin</li>
+<li>Moxifloxacin</li>
+<li>Ofloxacin</li>
+<li>Norfloxacin</li>
+<li>Glimepiride</li>
+<li>Glibenclamide</li>
+<li>Sitagliptin</li>
+<li>Empagliflozin</li>
+<li>Dapagliflozin</li>
+<li>Canagliflozin</li>
+<li>Pioglitazone</li>
+<li>Rosiglitazone</li>
+<li>Insulin Glargine</li>
+<li>Insulin Lispro</li>
+<li>Insulin Aspart</li>
+<li>Adalimumab</li>
+<li>Infliximab</li>
+<li>Trastuzumab</li>
+<li>Bevacizumab</li>
+<li>Rituximab</li>
+<li>Pembrolizumab</li>
+<li>Nivolumab</li>
+<li>Etanercept</li>
+<li>Tocilizumab</li>
+<li>Dupilumab</li>
+<li>Omalizumab</li>
 
 </ul>
 
@@ -302,8 +357,7 @@ to create the next generation of therapeutics.
 
 <footer>
 
-<p>© 2026 Veloce Biotechnology</p>
-<p>Advancing biotechnology, pharmaceuticals, and AI-driven medicine.</p>
+© 2026 Veloce Biotechnology
 
 </footer>
 
