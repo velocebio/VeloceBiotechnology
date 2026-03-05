@@ -1,366 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veloce Biotechnology | Regency Edition</title>
 
-<title>Veloce Biotechnology</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 
 <style>
-
-body{
-margin:0;
-font-family:Georgia,serif;
+:root {
+    --bridgerton-blue: #a8d1e7; /* Classic Powder Blue */
+    --regency-gold: #c5a059;
+    --cream-parchment: #fffdf5;
+    --royal-purple: #5e3a8c;
 }
 
-/* HERO BACKGROUND */
+body {
+    margin: 0;
+    font-family: 'Lora', serif;
+    background-color: var(--cream-parchment);
+    /* Subtle floral pattern overlay */
+    background-image: url("https://www.transparenttextures.com/patterns/floral-paper.png"); 
+    color: #333;
+}
 
-.hero{
-height:100vh;
-
-background-image:
-linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.85)),
-url("https://images.unsplash.com/photo-1525310072745-f49212b5ac6d");
-
-background-size:cover;
-background-position:center;
-
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-text-align:center;
+/* HERO SECTION - Wisteria and Garden Vibe */
+.hero {
+    height: 100vh;
+    background-image: 
+        linear-gradient(rgba(255, 253, 245, 0.6), rgba(255, 253, 245, 0.8)),
+        url("https://images.unsplash.com/photo-1582234372722-50d7ccc30eb3?q=80&w=2000"); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 4px double var(--regency-gold);
 }
 
 /* NAVBAR */
-
-header{
-position:absolute;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-padding:25px 70px;
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+    background: rgba(255, 253, 245, 0.4);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.3);
 }
 
-nav a{
-margin-left:25px;
-text-decoration:none;
-color:#333;
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--royal-purple);
+    margin-left: 50px;
+    font-size: 1.8rem;
 }
 
-header h1{
-color:#6b3fa0;
+nav { margin-right: 50px; }
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #444;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    transition: color 0.3s;
 }
 
-/* HERO TEXT */
+nav a:hover { color: var(--regency-gold); }
 
-.hero h2{
-font-size:60px;
-color:#6b3fa0;
+/* TEXT STYLING */
+.hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 70px;
+    color: var(--royal-purple);
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
-.hero p{
-font-size:22px;
-width:60%;
+.hero p {
+    font-size: 22px;
+    font-style: italic;
+    max-width: 600px;
+    line-height: 1.6;
 }
 
-/* SECTIONS */
+/* VINTAGE CARDS */
+.section { padding: 100px 10%; text-align: center; }
 
-.section{
-padding:80px 120px;
-text-align:center;
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: var(--regency-gold);
+    margin-bottom: 40px;
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
+/* Decorative Flourish */
+h2::after {
+    content: "❧";
+    display: block;
+    font-size: 24px;
+    margin-top: 10px;
+    color: var(--bridgerton-blue);
 }
 
-.card{
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
 }
 
-/* DRUG SEARCH */
-
-input{
-padding:12px;
-width:300px;
-border-radius:20px;
-border:1px solid #ccc;
-margin-bottom:20px;
+.card {
+    background: white;
+    padding: 40px 30px;
+    border: 1px solid var(--bridgerton-blue);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    position: relative;
+    /* Fancy inner border */
+    outline: 1px solid var(--regency-gold);
+    outline-offset: -12px;
+    transition: transform 0.4s ease;
 }
 
-footer{
-background:#f0e6ff;
-text-align:center;
-padding:40px;
+.card:hover { transform: scale(1.03); }
+
+.card h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--royal-purple);
+}
+
+/* SEARCH INPUT - Vintage Look */
+input {
+    padding: 15px 25px;
+    width: 300px;
+    border: 1px solid var(--bridgerton-blue);
+    border-radius: 0;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    background: #fff;
+    margin-bottom: 40px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+ul#drugList {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+ul#drugList li {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    font-size: 0.9rem;
+}
+
+footer {
+    background: var(--bridgerton-blue);
+    color: white;
+    text-align: center;
+    padding: 80px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
 }
 
 </style>
 
 <script>
-
 function searchDrug(){
-
-let input=document.getElementById("search").value.toLowerCase()
-
-let drugs=document.querySelectorAll("#drugList li")
-
-drugs.forEach(function(drug){
-
-let text=drug.innerText.toLowerCase()
-
-if(text.includes(input)){
-drug.style.display=""
-}else{
-drug.style.display="none"
+    let input = document.getElementById("search").value.toLowerCase();
+    let drugs = document.querySelectorAll("#drugList li");
+    drugs.forEach(function(drug){
+        let text = drug.innerText.toLowerCase();
+        drug.style.display = text.includes(input) ? "" : "none";
+    });
 }
-
-})
-
-}
-
 </script>
-
 </head>
 
 <body>
 
 <header>
-
-<h1>🧬 Veloce Biotechnology</h1>
-
-<nav>
-
-<a href="#">Home</a>
-<a href="#genetics">Genetic Tech</a>
-<a href="#pharma">Pharmaceuticals</a>
-<a href="#drugs">Drug Database</a>
-
-</nav>
-
+    <h1>Veloce Biotechnology</h1>
+    <nav>
+        <a href="#">The Estate</a>
+        <a href="#genetics">Discoveries</a>
+        <a href="#pharma">Apothecary</a>
+        <a href="#drugs">The Ledger</a>
+    </nav>
 </header>
 
-<!-- HERO -->
-
 <section class="hero">
-
-<h2>Veloce Biotechnology</h2>
-
-<p>
-Elegant science combining biotechnology, pharmaceuticals,
-and artificial intelligence to accelerate medicine discovery.
-</p>
-
+    <h2>An Elegant Science</h2>
+    <p>
+        "It is a truth universally acknowledged, that a modern society in search of health, must be in want of superior biotechnology."
+    </p>
 </section>
-
-<!-- GENETIC TECHNOLOGY -->
 
 <section class="section" id="genetics">
-
-<h2>Genetic Technologies</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>CRISPR Gene Editing</h3>
-<p>Precise genome editing technology.</p>
-</div>
-
-<div class="card">
-<h3>Gene Therapy</h3>
-<p>Treating diseases by modifying genetic material.</p>
-</div>
-
-<div class="card">
-<h3>mRNA Technology</h3>
-<p>Messenger RNA based therapeutics and vaccines.</p>
-</div>
-
-<div class="card">
-<h3>DNA Sequencing</h3>
-<p>Next generation genomic sequencing platforms.</p>
-</div>
-
-<div class="card">
-<h3>Base Editing</h3>
-<p>Direct chemical conversion of DNA bases.</p>
-</div>
-
-<div class="card">
-<h3>Prime Editing</h3>
-<p>Advanced gene correction technology.</p>
-</div>
-
-<div class="card">
-<h3>CAR-T Cell Therapy</h3>
-<p>Genetically engineered immune cells for cancer.</p>
-</div>
-
-<div class="card">
-<h3>Synthetic Biology</h3>
-<p>Engineering biological systems for medicine.</p>
-</div>
-
-</div>
-
+    <h2>Genetic Technologies</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>CRISPR Editing</h3>
+            <p>The most precise quill for the script of life.</p>
+        </div>
+        <div class="card">
+            <h3>Gene Therapy</h3>
+            <p>Restoring the natural constitution of the ton.</p>
+        </div>
+        <div class="card">
+            <h3>mRNA Tech</h3>
+            <p>A most remarkable messenger for the modern age.</p>
+        </div>
+        <div class="card">
+            <h3>Prime Editing</h3>
+            <p>Refining the code with utmost sophistication.</p>
+        </div>
+    </div>
 </section>
-
-<!-- PHARMA -->
-
-<section class="section" id="pharma">
-
-<h2>Pharmaceutical Capabilities</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>OSD</h3>
-<p>Tablets and capsules.</p>
-</div>
-
-<div class="card">
-<h3>Injectables</h3>
-<p>Sterile IV medicines and vaccines.</p>
-</div>
-
-<div class="card">
-<h3>Biologics</h3>
-<p>Monoclonal antibodies and recombinant proteins.</p>
-</div>
-
-<div class="card">
-<h3>Drug Discovery</h3>
-<p>AI-driven therapeutic design.</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- DRUG DATABASE -->
 
 <section class="section" id="drugs">
-
-<h2>Drug Database</h2>
-
-<input type="text" id="search" placeholder="Search drug..." onkeyup="searchDrug()">
-
-<ul id="drugList">
-
-<li>Paracetamol</li>
-<li>Ibuprofen</li>
-<li>Aspirin</li>
-<li>Amoxicillin</li>
-<li>Azithromycin</li>
-<li>Ciprofloxacin</li>
-<li>Doxycycline</li>
-<li>Metformin</li>
-<li>Insulin</li>
-<li>Omeprazole</li>
-<li>Atorvastatin</li>
-<li>Losartan</li>
-<li>Amlodipine</li>
-<li>Warfarin</li>
-<li>Prednisone</li>
-<li>Hydrochlorothiazide</li>
-<li>Simvastatin</li>
-<li>Lisinopril</li>
-<li>Clopidogrel</li>
-<li>Levothyroxine</li>
-<li>Gabapentin</li>
-<li>Sertraline</li>
-<li>Fluoxetine</li>
-<li>Escitalopram</li>
-<li>Diazepam</li>
-<li>Lorazepam</li>
-<li>Alprazolam</li>
-<li>Codeine</li>
-<li>Morphine</li>
-<li>Fentanyl</li>
-<li>Oxycodone</li>
-<li>Tramadol</li>
-<li>Ketamine</li>
-<li>Propofol</li>
-<li>Midazolam</li>
-<li>Ranitidine</li>
-<li>Famotidine</li>
-<li>Pantoprazole</li>
-<li>Lansoprazole</li>
-<li>Esomeprazole</li>
-<li>Ceftriaxone</li>
-<li>Cefixime</li>
-<li>Cefuroxime</li>
-<li>Vancomycin</li>
-<li>Meropenem</li>
-<li>Imipenem</li>
-<li>Clarithromycin</li>
-<li>Rifampicin</li>
-<li>Isoniazid</li>
-<li>Ethambutol</li>
-<li>Pyrazinamide</li>
-<li>Tenofovir</li>
-<li>Lamivudine</li>
-<li>Dolutegravir</li>
-<li>Acyclovir</li>
-<li>Valacyclovir</li>
-<li>Oseltamivir</li>
-<li>Remdesivir</li>
-<li>Hydroxychloroquine</li>
-<li>Chloroquine</li>
-<li>Artemether</li>
-<li>Lumefantrine</li>
-<li>Albendazole</li>
-<li>Mebendazole</li>
-<li>Ivermectin</li>
-<li>Metronidazole</li>
-<li>Tinidazole</li>
-<li>Nitrofurantoin</li>
-<li>Trimethoprim</li>
-<li>Sulfamethoxazole</li>
-<li>Levofloxacin</li>
-<li>Moxifloxacin</li>
-<li>Ofloxacin</li>
-<li>Norfloxacin</li>
-<li>Glimepiride</li>
-<li>Glibenclamide</li>
-<li>Sitagliptin</li>
-<li>Empagliflozin</li>
-<li>Dapagliflozin</li>
-<li>Canagliflozin</li>
-<li>Pioglitazone</li>
-<li>Rosiglitazone</li>
-<li>Insulin Glargine</li>
-<li>Insulin Lispro</li>
-<li>Insulin Aspart</li>
-<li>Adalimumab</li>
-<li>Infliximab</li>
-<li>Trastuzumab</li>
-<li>Bevacizumab</li>
-<li>Rituximab</li>
-<li>Pembrolizumab</li>
-<li>Nivolumab</li>
-<li>Etanercept</li>
-<li>Tocilizumab</li>
-<li>Dupilumab</li>
-<li>Omalizumab</li>
-
-</ul>
-
+    <h2>The Pharmaceutical Ledger</h2>
+    <input type="text" id="search" placeholder="Search the archives..." onkeyup="searchDrug()">
+    <ul id="drugList">
+        <li>Paracetamol</li><li>Ibuprofen</li><li>Aspirin</li><li>Amoxicillin</li>
+        <li>Insulin</li><li>Metformin</li><li>Atorvastatin</li><li>Levothyroxine</li>
+    </ul>
 </section>
 
 <footer>
-
-© 2026 Veloce Biotechnology
-
+    © 1813 - 2026 Veloce Biotechnology. Curated for the Society.
 </footer>
 
 </body>
-
 </html>
