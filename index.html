@@ -1,190 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Veloce Biotechnology | Regency Edition</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veloce Biotechnology | The Diamond Edition</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;1,400&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bridgerton-blue: #a8d1e7;
+            --regency-gold: #c5a059;
+            --cream-parchment: #fffdf5;
+            --royal-purple: #5e3a8c;
+            --danbury-wine: #800020;
+            --featherington-yellow: #f4d03f;
+            --wisteria-lavender: #e6e6fa;
+        }
 
-<style>
-:root {
-    --bridgerton-blue: #a8d1e7; /* Classic Powder Blue */
-    --regency-gold: #c5a059;
-    --cream-parchment: #fffdf5;
-    --royal-purple: #5e3a8c;
-}
+        * { transition: all 0.3s ease; scroll-behavior: smooth; }
 
-body {
-    margin: 0;
-    font-family: 'Lora', serif;
-    background-color: var(--cream-parchment);
-    /* Subtle floral pattern overlay */
-    background-image: url("https://www.transparenttextures.com/patterns/floral-paper.png"); 
-    color: #333;
-}
+        body {
+            margin: 0;
+            font-family: 'Lora', serif;
+            background-color: var(--cream-parchment);
+            background-image: url("https://www.transparenttextures.com/patterns/floral-paper.png"); 
+            color: #333;
+            overflow-x: hidden;
+        }
 
-/* HERO SECTION - Wisteria and Garden Vibe */
-.hero {
-    height: 100vh;
-    background-image: 
-        linear-gradient(rgba(255, 253, 245, 0.6), rgba(255, 253, 245, 0.8)),
-        url("https://images.unsplash.com/photo-1582234372722-50d7ccc30eb3?q=80&w=2000"); 
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    border-bottom: 4px double var(--regency-gold);
-}
+        /* --- NAVIGATION --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            background: rgba(255, 253, 245, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 3px double var(--regency-gold);
+            z-index: 1000;
+        }
 
-/* NAVBAR */
-header {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 30px 0;
-    background: rgba(255, 253, 245, 0.4);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(197, 160, 89, 0.3);
-}
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--royal-purple);
+            margin-left: 50px;
+            font-size: 1.6rem;
+        }
 
-header h1 {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    color: var(--royal-purple);
-    margin-left: 50px;
-    font-size: 1.8rem;
-}
+        nav { margin-right: 50px; }
 
-nav { margin-right: 50px; }
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #444;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+        }
 
-nav a {
-    margin-left: 25px;
-    text-decoration: none;
-    color: #444;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-    transition: color 0.3s;
-}
+        nav a:hover { color: var(--regency-gold); }
 
-nav a:hover { color: var(--regency-gold); }
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            background-image: 
+                linear-gradient(rgba(255, 253, 245, 0.5), rgba(168, 209, 231, 0.4)),
+                url("https://images.unsplash.com/photo-1582234372722-50d7ccc30eb3?q=80&w=2000"); 
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-bottom: 8px double var(--regency-gold);
+        }
 
-/* TEXT STYLING */
-.hero h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 70px;
-    color: var(--royal-purple);
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-}
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 80px;
+            color: var(--danbury-wine);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 0px var(--wisteria-lavender);
+        }
 
-.hero p {
-    font-size: 22px;
-    font-style: italic;
-    max-width: 600px;
-    line-height: 1.6;
-}
+        /* --- WHISTLEDOWN SECTION --- */
+        .whistledown-box {
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 40px;
+            background: white;
+            border: 1px solid var(--bridgerton-blue);
+            box-shadow: 15px 15px 0px var(--wisteria-lavender);
+            font-style: italic;
+            position: relative;
+            text-align: left;
+        }
 
-/* VINTAGE CARDS */
-.section { padding: 100px 10%; text-align: center; }
+        .whistledown-box::before {
+            content: "The Social Gazette";
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: var(--regency-gold);
+            color: white;
+            padding: 2px 15px;
+            font-family: 'Playfair Display';
+            font-size: 0.8rem;
+        }
 
-h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 42px;
-    color: var(--regency-gold);
-    margin-bottom: 40px;
-}
+        /* --- CARDS --- */
+        .section { padding: 100px 10%; text-align: center; }
 
-/* Decorative Flourish */
-h2::after {
-    content: "❧";
-    display: block;
-    font-size: 24px;
-    margin-top: 10px;
-    color: var(--bridgerton-blue);
-}
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-}
+        .card {
+            background: white;
+            padding: 40px 25px;
+            border: 2px solid var(--bridgerton-blue);
+            outline: 1px solid var(--regency-gold);
+            outline-offset: -12px;
+            cursor: pointer;
+            border-radius: 15px 0;
+        }
 
-.card {
-    background: white;
-    padding: 40px 30px;
-    border: 1px solid var(--bridgerton-blue);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    position: relative;
-    /* Fancy inner border */
-    outline: 1px solid var(--regency-gold);
-    outline-offset: -12px;
-    transition: transform 0.4s ease;
-}
+        .card:hover {
+            transform: translateY(-10px);
+            background: var(--wisteria-lavender);
+            border-color: var(--royal-purple);
+        }
 
-.card:hover { transform: scale(1.03); }
+        .card h3 { color: var(--danbury-wine); font-family: 'Playfair Display'; }
 
-.card h3 {
-    font-family: 'Playfair Display', serif;
-    color: var(--royal-purple);
-}
+        /* --- SEARCH & LEDGER --- */
+        .search-container { margin-bottom: 50px; }
 
-/* SEARCH INPUT - Vintage Look */
-input {
-    padding: 15px 25px;
-    width: 300px;
-    border: 1px solid var(--bridgerton-blue);
-    border-radius: 0;
-    font-family: 'Lora', serif;
-    font-style: italic;
-    background: #fff;
-    margin-bottom: 40px;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
-}
+        #search {
+            padding: 15px;
+            width: 350px;
+            border: 2px solid var(--regency-gold);
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            text-align: center;
+            box-shadow: 5px 5px 0px var(--bridgerton-blue);
+            background: #fff;
+        }
 
-ul#drugList {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 10px;
-}
+        .instruction {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: var(--royal-purple);
+            font-style: italic;
+            font-weight: bold;
+        }
 
-ul#drugList li {
-    background: rgba(255, 255, 255, 0.7);
-    padding: 10px;
-    border: 1px solid #e0e0e0;
-    font-size: 0.9rem;
-}
+        #drugList {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
 
-footer {
-    background: var(--bridgerton-blue);
-    color: white;
-    text-align: center;
-    padding: 80px;
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-}
+        #drugList li {
+            background: white;
+            padding: 10px 20px;
+            border: 1px solid var(--regency-gold);
+            border-radius: 20px;
+            font-family: 'Playfair Display';
+            cursor: pointer;
+            font-weight: bold;
+        }
 
-</style>
+        #drugList li:hover {
+            background: var(--featherington-yellow);
+            transform: scale(1.1);
+        }
 
-<script>
-function searchDrug(){
-    let input = document.getElementById("search").value.toLowerCase();
-    let drugs = document.querySelectorAll("#drugList li");
-    drugs.forEach(function(drug){
-        let text = drug.innerText.toLowerCase();
-        drug.style.display = text.includes(input) ? "" : "none";
-    });
-}
-</script>
+        footer {
+            background: var(--royal-purple);
+            color: white;
+            padding: 80px;
+            text-align: center;
+            border-top: 5px double var(--regency-gold);
+        }
+    </style>
 </head>
 
 <body>
@@ -194,52 +206,97 @@ function searchDrug(){
     <nav>
         <a href="#">The Estate</a>
         <a href="#genetics">Discoveries</a>
-        <a href="#pharma">Apothecary</a>
-        <a href="#drugs">The Ledger</a>
+        <a href="#ledger">The Ledger</a>
     </nav>
 </header>
 
 <section class="hero">
     <h2>An Elegant Science</h2>
-    <p>
+    <p style="max-width: 600px; font-size: 1.4rem; font-style: italic;">
         "It is a truth universally acknowledged, that a modern society in search of health, must be in want of superior biotechnology."
     </p>
 </section>
 
 <section class="section" id="genetics">
-    <h2>Genetic Technologies</h2>
+    <div class="whistledown-box">
+        <strong>Dearest Gentle Reader,</strong><br><br>
+        The Ton is abuzz with a most peculiar scandal—it seems science has learned to rewrite the very ink of our constitution. While some prefer the gossip of the ballroom, Veloce Biotechnology prefers the secrets held within the cell. 
+        <br><br>
+        <em>Click a card below to uncover the truth of these modern marvels...</em>
+        <br><br>
+        <em>— Lady Whistledown</em>
+    </div>
+
+    <h2 style="font-family: 'Playfair Display'; color: var(--regency-gold);">The Genetic Suite</h2>
     <div class="grid">
-        <div class="card">
+        <div class="card" onclick="research('CRISPR gene editing')">
             <h3>CRISPR Editing</h3>
             <p>The most precise quill for the script of life.</p>
         </div>
-        <div class="card">
+        <div class="card" onclick="research('Gene Therapy techniques')">
             <h3>Gene Therapy</h3>
             <p>Restoring the natural constitution of the ton.</p>
         </div>
-        <div class="card">
+        <div class="card" onclick="research('mRNA vaccine technology')">
             <h3>mRNA Tech</h3>
             <p>A most remarkable messenger for the modern age.</p>
         </div>
-        <div class="card">
+        <div class="card" onclick="research('Prime Editing biotechnology')">
             <h3>Prime Editing</h3>
             <p>Refining the code with utmost sophistication.</p>
         </div>
     </div>
 </section>
 
-<section class="section" id="drugs">
-    <h2>The Pharmaceutical Ledger</h2>
-    <input type="text" id="search" placeholder="Search the archives..." onkeyup="searchDrug()">
+<section class="section" id="ledger">
+    <h2 style="font-family: 'Playfair Display'; color: var(--regency-gold);">The Pharmaceutical Ledger</h2>
+    
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Search the archives..." onkeyup="handleSearch(event)">
+        <span class="instruction">Press "Enter" to research on Google</span>
+    </div>
+
     <ul id="drugList">
-        <li>Paracetamol</li><li>Ibuprofen</li><li>Aspirin</li><li>Amoxicillin</li>
-        <li>Insulin</li><li>Metformin</li><li>Atorvastatin</li><li>Levothyroxine</li>
+        <li onclick="research('Paracetamol')">Paracetamol</li>
+        <li onclick="research('Ibuprofen')">Ibuprofen</li>
+        <li onclick="research('Aspirin')">Aspirin</li>
+        <li onclick="research('Amoxicillin')">Amoxicillin</li>
+        <li onclick="research('Insulin')">Insulin</li>
+        <li onclick="research('Metformin')">Metformin</li>
+        <li onclick="research('Atorvastatin')">Atorvastatin</li>
+        <li onclick="research('Levothyroxine')">Levothyroxine</li>
     </ul>
 </section>
 
 <footer>
-    © 1813 - 2026 Veloce Biotechnology. Curated for the Society.
+    © 1813 - 2026 Veloce Biotechnology. <br>
+    <em>Curated for the Society of the First Water.</em>
 </footer>
+
+<script>
+    // Function to filter list AND handle Google Redirect on Enter
+    function handleSearch(event) {
+        let query = document.getElementById("search").value.toLowerCase();
+        let drugs = document.querySelectorAll("#drugList li");
+
+        // Filter the visible list
+        drugs.forEach(function(drug) {
+            let text = drug.innerText.toLowerCase();
+            drug.style.display = text.includes(query) ? "block" : "none";
+        });
+
+        // If user presses Enter, redirect to Google
+        if (event.key === "Enter" && query !== "") {
+            research(query);
+        }
+    }
+
+    // Function to redirect to Google for more information
+    function research(term) {
+        const url = `https://www.google.com/search?q=${encodeURIComponent(term)}`;
+        window.open(url, '_blank');
+    }
+</script>
 
 </body>
 </html>
